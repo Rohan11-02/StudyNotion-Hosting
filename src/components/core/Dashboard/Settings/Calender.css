@@ -1,0 +1,11 @@
+.date-input::-webkit-calendar-picker-indicator {
+    color: red; /* Changes the icon color */
+    background-color: yellow; /* Adds a background color */
+    border-radius: 50%; /* Makes the background color circular */
+    padding: 5px;
+  }
+  
+  .date-input::-webkit-calendar-picker-indicator:hover {
+    color: blue; /* Changes color on hover */
+  }
+  
