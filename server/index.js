@@ -24,7 +24,8 @@ app.use(fileUpload({
 app.use(cookieParser());
 
 app.use(cors({
-    origin : "http://localhost:3000",
+    // origin : "http://localhost:3000",
+    origin : "https://studynotion-frontend-ntp78ge9l-rohans-projects-49308115.vercel.app",
     credentials : true,
 }))
 
