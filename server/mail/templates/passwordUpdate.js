@@ -55,7 +55,7 @@ exports.passwordUpdated = (email, name) => {
     
     <body>
         <div class="container">
-            <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
+            <a href="https://studynotion-frontend-ntp78ge9l-rohans-projects-49308115.vercel.app"><img class="logo"
                     src="https://res.cloudinary.com/dcczqo4ig/image/upload/v1739446545/Mega%20Ed-tech%20Project/rowslpfdi2peyjidkcym.jpg" alt="StudyNotion Logo"></a>
             <div class="message">Password Update Confirmation</div>
             <div class="body">
@@ -66,7 +66,7 @@ exports.passwordUpdated = (email, name) => {
             </div>
             <div class="support">If you have any questions or need further assistance, please feel free to reach out to us
                 at
-                <a href="mailto:info@studynotion.com">info@studynotion.com</a>. We are here to help!
+                <a href="mailto:rohan2003.02.11@gmail.com">info@studynotion.com</a>. We are here to help!
             </div>
         </div>
     </body>
