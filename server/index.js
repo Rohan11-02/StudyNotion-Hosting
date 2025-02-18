@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 app.use(cors({
     // origin : "http://localhost:3000",
-    origin : "https://studynotion-frontend-ntp78ge9l-rohans-projects-49308115.vercel.app",
+    origin : "https://studynotion-frontend-3fjpzhjkr-rohans-projects-49308115.vercel.app",
     credentials : true,
 }))
 
