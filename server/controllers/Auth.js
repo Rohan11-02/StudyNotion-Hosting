@@ -205,7 +205,7 @@ exports.login = async(req, res) =>{
             user.password = undefined;
 
             res.cookie("token", token, {
-                expires : new Date(Date.now() + 2*24*60*60*1000),
+                expires : new Date(Date.now() + 24*60*60*1000),
                 httpOnly : true
             }).status(200).json({
                 success : true,
