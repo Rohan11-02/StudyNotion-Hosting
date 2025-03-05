@@ -20,6 +20,34 @@ export const fetchCourseCategories = async() => {
 }
 
 
+
+export const coursesForLoginInstructor = async(token) => {
+    let result = false;
+    let response = null;
+    const toastId = toast.loading("Loading...");
+    try{
+        response = await apiConnector("GET", courseEndpoints.GET_ALL_INSTRUCTOR_COURSES_API,
+            null,
+            {
+                Authorization : `Bearer ${token}`
+            }
+        )
+        console.log("INSTRUCTOR COURSES API RESPONSE............", response)
+        if (!response?.data?.success) {
+        throw new Error("Could Not Fetch Instructor Courses")
+        }
+        result = response?.data?.success
+    }
+    catch(err){
+        result = response?.data?.success
+        console.log("INSTRUCTOR COURSES API ERROR............", err)
+        toast.error(err.message)
+    }
+    toast.dismiss(toastId);
+    return result;
+}
+
+
 export const addCourseDetails = async(data, token) => {
     let result = null;
     const toastId = toast.loading("Loading...");
