@@ -27,10 +27,10 @@ import { CourseDetails } from "./pages/CourseDetails";
 import { ViewCourse } from "./pages/ViewCourse";
 import { VideoDetails } from "./components/core/Dashboard/ViewCourse/VideoDetails";
 import { Instructor } from "./components/core/Dashboard/Instructor";
-import { getUserEnrolledCourses } from "./services/operations/profileAPI";
+import { enrolledCoursesForLogin } from "./services/operations/profileAPI";
 import { logout } from "./services/operations/Thunks";
 import { useEffect } from "react";
-import { fetchInstructorCourses } from "./services/operations/courseDetailsAPI";
+import { coursesForLoginInstructor } from "./services/operations/courseDetailsAPI";
 
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
   // console.log("Inside App.js", user);
 
   const getEnrolledCourses = async() => {
-    const response = await getUserEnrolledCourses(token);
+    const response = await enrolledCoursesForLogin(token);
     // console.log("Printing in App.js", response);
     if(!response){
       dispatch(logout(navigate));
@@ -49,13 +49,14 @@ function App() {
   }
 
   const fetchCourses = async() => {
-    const response = await fetchInstructorCourses(token);
+    const response = await coursesForLoginInstructor(token);
     // console.log("Inside App.js Printing Instructor Courses", response.instructorCourses);
-    if(!response.instructorCourses){
+    if(!response){
       dispatch(logout(navigate));
     }
   }
 
+  
   useEffect(() => {
     if(user?.accountType === ACCOUNT_TYPE.STUDENT){
       getEnrolledCourses();
